@@ -1,2 +1,2 @@
-# ruster
-online community in rust for rust   [ruster](http://ruster.xyz/)
+# [Ruster](http://ruster.xyz/)
+online community in rust for rust   
