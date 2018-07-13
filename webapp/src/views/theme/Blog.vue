@@ -281,15 +281,6 @@ export default {
 #theblog #reply #messagenote {
     color: fuchsia;
 }
-#theblog iframe {
-    margin: 1rem auto;
-    padding: 0.1rem;
-}
-#theblog img {
-        margin: 1rem auto;
-        padding: 0.1rem;
-        width: 100%;
-}
 #theblog #editor {
     margin: 0 auto;
     height: 333px;
@@ -377,9 +368,6 @@ export default {
         font-size: 0.85rem;
         margin-right: 0.8rem;
     }
-    #theblog iframe {
-        width: 350px;
-    }
 }
 @media only screen and (min-width: 600px) and (max-width: 850px) {
     #theblog main{
@@ -422,9 +410,6 @@ export default {
         font-size: 1rem;
         margin-right: 2rem;
     }
-    #theblog iframe {
-        width: 455px;
-    }
 }
 @media only screen and (min-width: 850px) {
     #theblog {
@@ -466,9 +451,6 @@ export default {
         float: right;
         font-size: 0.9rem;
         margin-right: 2rem;
-    }
-    #theblog iframe {
-        width: 960px;
     }
 }
 </style>
