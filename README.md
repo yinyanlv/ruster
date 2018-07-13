@@ -42,7 +42,7 @@ $ cargo run --release
 then open broswer 'http://localhost:8000/'
 
 ## Support Ruster/支持Ruster
-Ruster is community project for community, It's need money for Cloud server to support the online website. If you will let the project have a bright future and want help the project, please gave your hand thanks. at this moment you can contact [krircc](https://github.com/krircc) or krircc@aliyun.com
+Ruster is community project for community, It's need money for Cloud server to support the [Ruster](http://ruster.xyz/). If you will let the project have a bright future and want help the project, please gave your hand thanks. at this moment you can contact [krircc](https://github.com/krircc) or krircc@aliyun.com
 
 
 ## License
