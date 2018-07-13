@@ -19,7 +19,7 @@ import Hourse from '../views/user/Hourse'
 import Comment from '../views/user/Comment'
 import Save from '../views/user/Save'
 import Message from '../views/user/Message'
-import More from '../views/more/More'
+import Help from '../views/help/Help'
 import Admin from '../views/admin/Admin'
 import NotFound from '../views/notfound/NotFound'
 Vue.use(Router)
@@ -47,7 +47,7 @@ export default new Router({
         { path: '/a/user/:id/comment', name: 'usercomment', component: Comment },
         { path: '/a/user/:id/save', name: 'usersave', component: Save },
         { path: '/a/user/:id/message', name: 'usermessage', component: Message },
-    { path: '/a/more', name: 'more', component: More },
+    { path: '/a/help', name: 'help', component: Help },
 
     { path: '/a/admin', name: 'admin', component: Admin },
     { path: '*', name: 'notfound', component: NotFound }

@@ -30,10 +30,12 @@
             <a href="/a/post" title="post">发布</a>
             <a :href="'/a/user/' + signin_user.id" title="signin_userusername">{{signin_user.username}}</a>
             <a href="/a/signin" title="Logout" @click="logout">退出</a>
+            <a href="/a/help" title="signin">捐助</a>
           </li>
           <li v-else > 
             <a href="/a/signin" title="signin">登陆</a>
             <a href="/a/signup" title="signin">注册</a>
+            <a href="/a/help" title="signin">捐助</a>
           </li>
       </div> 
   </div>
