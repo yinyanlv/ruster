@@ -1,0 +1,19 @@
+language: rust
+rust:
+- stable
+
+services:
+  - postgresql
+
+before_install:
+  - cargo install diesel_cli --no-default-features --features postgres
+
+before_script:
+  - psql -c "create user dbuser with login password 'password';" -U postgres
+  - psql -c "create database ruster with owner dbuser encoding 'utf8';" -U postgres
+  - diesel database setup
+
+
+script:
+- cargo build
+- cargo test
