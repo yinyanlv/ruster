@@ -18,9 +18,12 @@
                                     <li><a  href="/a/wiki/server/actix/actix-web/installation">安装</a></li>
                                     <li><a  href="/a/wiki/server/actix/actix-web/getting-starte">开始</a></li>
                                     <li><a  href="/a/wiki/server/actix/actix-web/application">应用</a></li>
-                                    <li><a  href="/a/wiki/server/actix/actix-web/getting-starte">开始</a></li>
-                                    <li><a  href="/a/wiki/server/actix/actix-web/getting-starte">开始</a></li>
-                                    <li><a  href="/a/wiki/server/actix/actix-web/getting-starte">开始</a></li>
+                                    <li><a  href="/a/wiki/server/actix/actix-web/server">服务器</a></li>
+                                    <li><a  href="/a/wiki/server/actix/actix-web/staticfile">静态文件</a></li>
+                                    <li><a  href="/a/wiki/server/actix/actix-web/websocket">Websocket</a></li>
+                                    <li><a  href="/a/wiki/server/actix/actix-web/http2">HTTP2</a></li>
+                                    <li><a  href="/a/wiki/server/actix/actix-web/autoreload">自动重加载</a></li>
+                                    <li><a  href="/a/wiki/server/actix/actix-web/databases">数据库</a></li>
                                 </details>
                           </li>
                     </details>

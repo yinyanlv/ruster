@@ -5,6 +5,7 @@
             <wikiserver></wikiserver>
             <wikiwasm></wikiwasm>
             <wikiiot></wikiiot>
+            <wikiapi></wikiapi>
         </div>
   </div>
 </template>
@@ -15,26 +16,36 @@ import WikiRust from './WikiRust'
 import WikiServer from './WikiServer'
 import WikiWasm from './WikiWasm'
 import WikiIOT from './WikiIOT'
+import WikiAPI from './WikiAPI'
 export default {
   name: 'wikiside',
   components: {
     "wikirust": WikiRust,
     "wikiserver": WikiServer,
     "wikiwasm": WikiWasm,
-    "wikiiot": WikiIOT
+    "wikiiot": WikiIOT,
+    "wikiapi": WikiAPI
   }
 }
 </script>
 
 <style scoped>
 @media only screen and (max-width: 600px) {
-    #container  {
+    #container #wikirust, 
+    #container #wikiserver,
+    #container #wikiwasm,
+    #container #wikiiot,
+    #container #wikiapi {
       display: block;
-      padding: 0.5rem;
+      margin: 0.5rem;
     }
 }
 @media only screen and (min-width: 600px) and (max-width: 850px) {
-   #container  {
+   #container #wikirust, 
+   #container #wikiserver,
+   #container #wikiwasm,
+   #container #wikiiot,
+   #container #wikiapi {
      display: block;
      margin: 0.8rem;
    }
@@ -43,7 +54,8 @@ export default {
    #container #wikirust, 
    #container #wikiserver,
    #container #wikiwasm,
-   #container #wikiiot {
+   #container #wikiiot,
+   #container #wikiapi {
      display: block;
      margin: 1rem;
    }
