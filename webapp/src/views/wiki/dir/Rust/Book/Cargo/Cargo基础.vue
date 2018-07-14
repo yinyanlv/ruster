@@ -1,5 +1,5 @@
 <template>
-  <div  id="Cargo基础">
+  <div  id="cargobase">
       <main>
         <div id="container">
           <wikiside id="wikiside"></wikiside>
@@ -127,7 +127,7 @@ Hello, world!
 /* eslint-disable */
 import Wikiside from '../../../../../../components/wikiside/Wikiside'
 export default {
-  name: 'Cargo基础',
+  name: 'cargobase',
   components: {
     "wikiside": Wikiside
   }

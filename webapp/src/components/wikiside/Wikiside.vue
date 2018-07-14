@@ -30,13 +30,13 @@ export default {
 @media only screen and (max-width: 600px) {
     #container  {
       display: block;
-      padding: 0.3rem;
+      padding: 0.5rem;
     }
 }
 @media only screen and (min-width: 600px) and (max-width: 850px) {
    #container  {
      display: block;
-     margin: 0.7rem;
+     margin: 0.8rem;
    }
 }
 @media only screen and (min-width: 850px) {

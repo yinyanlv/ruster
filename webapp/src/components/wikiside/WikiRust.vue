@@ -1,36 +1,36 @@
 <template>
   <div  id="wikirust">
         <details >
-              <summary id="summary1">Rust</summary>
-                <li id="details2">
+              <summary >Rust</summary>
+                <li >
                     <a  href="">Crates</a>
                 </li>
                 <li>
-                    <details id="details2">
+                    <details >
                       <summary>Book</summary>
                           <li>
-                              <details id="details2">
+                              <details >
                                 <summary>Cargo</summary>
                                     <li><a  href="/a/wiki/rust/book/cargo/cargobase">Cargo基础</a></li>
                                     <li><a  href="/a/wiki/rust/book/cargo/cargoset">Cargo配置</a></li>
                                 </details>
                           </li>
                           <li>
-                              <details id="details2">
+                              <details >
                                 <summary>Cargo</summary>
                                     <li><a  href="">Cargo基础</a></li>
                                     <li><a  href="">Cargo配置</a></li>
                                 </details>
                           </li>
                           <li>
-                              <details id="details2">
+                              <details >
                                 <summary>Cargo</summary>
                                     <li><a  href="">Cargo基础</a></li>
                                     <li><a  href="">Cargo配置</a></li>
                                 </details>
                           </li>
                           <li>
-                              <details id="details2">
+                              <details >
                                 <summary>Cargo</summary>
                                     <li><a  href="">Cargo基础</a></li>
                                     <li><a  href="">Cargo配置</a></li>
@@ -50,45 +50,48 @@ export default {
 
 <style scoped>
 @media only screen and (max-width: 600px) {
-    #wikirust #summary1 {
-        font-size: 1.2rem;
-    }
-    #wikirust #details2 {
-        font-size: 1.1rem;
-        padding-left: 1vw; 
-        margin: 0.2rem;
-    }
-    #wikirust #details2 li {
-        font-size: 0.9rem;
-        padding: 0.3vh 1vw; 
-    }
-}
-@media only screen and (min-width: 600px) and (max-width: 850px) {
-   #wikirust #summary1 {
+    #wikirust details summary {
+      font-size: 1.2rem;
+      margin: 0.1rem;
+   }
+   #wikirust  details li {
+      padding: 0.1vh 3vw; 
+   }
+   #wikirust  details details summary {
       font-size: 1.1rem;
    }
-   #wikirust #details2 {
-      font-size: 1rem;
-      padding-left: 1vw; 
-      margin: 0.2rem;
+   #wikirust  details details details summary {
+      font-size: 1.0rem;
    }
-   #wikirust #details2 li {
+}
+@media only screen and (min-width: 600px) and (max-width: 850px) {
+   #wikirust details summary {
+      font-size: 1.1rem;
+      margin: 0.1rem;
+   }
+   #wikirust  details li {
+      padding: 0.2vh 2vw; 
+   }
+   #wikirust  details details summary {
+      font-size: 1rem;
+   }
+   #wikirust  details details details summary {
       font-size: 0.9rem;
-      padding: 0.3vh 1vw; 
    }
 }
 @media only screen and (min-width: 850px) {
-   #wikirust  #summary1 {
+   #wikirust details summary {
       font-size: 1.2rem;
+      margin: 0.1rem;
    }
-   #wikirust  #details2 {
+   #wikirust  details li {
+      padding: 0.2vh 1vw; 
+   }
+   #wikirust  details details summary {
       font-size: 1.1rem;
-      padding-left: 1vw; 
-      margin: 0.2rem;
    }
-   #wikirust  #details2 li {
-      font-size: 0.9rem;
-      padding: 0.3vh 1vw; 
+   #wikirust  details details details summary {
+      font-size: 1.0rem;
    }
 }
 </style>

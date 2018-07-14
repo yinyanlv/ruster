@@ -1,7 +1,7 @@
 <template>
   <div  id="wikiwasm">
         <details >
-              <summary id="summary1">Wasm</summary>
+              <summary>Wasm</summary>
                 <!-- <li id="details2">
                     <a  href="">Crates</a>
                 </li>
@@ -23,18 +23,49 @@ export default {
 </script>
 
 <style scoped>
-@media only screen and (min-width: 850px) {
-   #wikiwasm  #summary1 {
+@media only screen and (max-width: 600px) {
+    #wikiwasm details summary {
       font-size: 1.2rem;
+      margin: 0.1rem;
    }
-   #wikiwasm  #details2 {
+   #wikiwasm  details li {
+      padding: 0.1vh 3vw; 
+   }
+   #wikiwasm  details details summary {
       font-size: 1.1rem;
-      padding-left: 1vw; 
-      margin: 0.2rem;
    }
-   #wikiwasm  #details2 li {
+   #wikiwasm  details details details summary {
+      font-size: 1.0rem;
+   }
+}
+@media only screen and (min-width: 600px) and (max-width: 850px) {
+   #wikiwasm details summary {
+      font-size: 1.1rem;
+      margin: 0.1rem;
+   }
+   #wikiwasm  details li {
+      padding: 0.2vh 2vw; 
+   }
+   #wikiwasm  details details summary {
+      font-size: 1rem;
+   }
+   #wikiwasm  details details details summary {
       font-size: 0.9rem;
-      padding: 0.3vh 1vw; 
+   }
+}
+@media only screen and (min-width: 850px) {
+   #wikiwasm details summary {
+      font-size: 1.2rem;
+      margin: 0.1rem;
+   }
+   #wikiwasm  details li {
+      padding: 0.2vh 1vw; 
+   }
+   #wikiwasm  details details summary {
+      font-size: 1.1rem;
+   }
+   #wikiwasm  details details details summary {
+      font-size: 1.0rem;
    }
 }
 </style>
