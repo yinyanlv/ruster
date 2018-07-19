@@ -6,6 +6,7 @@ use chrono::{Utc, NaiveDateTime};
 use model::response::{CategorysMsgs, Msgs, ThemePageListMsgs};
 
 #[derive(Clone,Debug,Serialize,Deserialize,PartialEq,Queryable)]
+#[serde(rename_all = "camelCase")]
 pub struct Category {
     pub id: i32,
     pub user_id: i32,
@@ -16,6 +17,7 @@ pub struct Category {
 
 #[derive(Serialize,Deserialize,Insertable,Debug, Clone)]
 #[table_name="categorys"]
+#[serde(rename_all = "camelCase")]
 pub struct NewCategory<'a> {
     pub user_id: i32,
     pub category_name: &'a str,
@@ -24,6 +26,7 @@ pub struct NewCategory<'a> {
 }
 
 #[derive(Deserialize,Serialize, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct CategoryNew {
     pub user_id: i32,
     pub category_name: String,
@@ -34,6 +37,7 @@ pub struct CategoryNew {
 pub struct Categorys;
 
 #[derive(Deserialize,Serialize, Debug, Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct CategoryThemePageList {
     pub page_id: i32,
     pub category_name: String,
