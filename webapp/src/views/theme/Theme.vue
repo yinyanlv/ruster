@@ -213,18 +213,9 @@ export default {
 #main #center #comment #detail #content {
     margin: 10px;
 }
-#main iframe {
-    margin: 1rem auto;
-    padding: 0.1rem;
-}
 #main #editor {
     margin: auto;
     height: 333px;
-}
-#main img {
-        margin: 1rem auto;
-        padding: 0.1rem;
-        width: 100%;
 }
 #main #reply #messagenote {
     color: fuchsia;
