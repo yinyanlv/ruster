@@ -36,11 +36,11 @@ export default {
             let category_name = this.CategoryNmae
             let category_name_cn = this.CategoryNmaeCN
             let user_id = JSON.parse(sessionStorage.getItem('signin_user')).id
-            if(category_name == ''){
-                alert("分类英文名不能为空")
-                return
-            }else if(title == ''){
+            if(category_name_cn == ''){
                 alert("分类中文名不能为空")
+                return
+            }else if(category_name == ''){
+                alert("分类英文名不能为空")
                 return
             }else{
                 let data = { 

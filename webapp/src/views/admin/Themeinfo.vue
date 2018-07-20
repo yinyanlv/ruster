@@ -1,5 +1,5 @@
 <template>
-    <div id="admin">
+    <div id="themeinfo">
       <div id="show"><img src="../../../static/imgs/ruster.png" /></div>
       <div id="title">
           <ul>
@@ -62,7 +62,7 @@ import auth from '../../utils/auth'
 import Gotop from '../../components/gotop/Gotop'
 import Mnav from '../../components/nav/Mnav'
 export default {
-  name: 'admin',
+  name: 'themeinfo',
   components: {
     "gotop": Gotop,
     "mnav": Mnav

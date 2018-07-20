@@ -17,7 +17,7 @@
                 </div>
                 <div id="center">
                     <div id="theme">
-                        <div id="content" v-html="theme.content" ></div>
+                        <div id="content" v-html="theme.content" v-highlight> </div>
                     </div>
                     <hr>
                     <div id="comment">
@@ -28,7 +28,7 @@
                                     <span id="info" >{{ index + 1 }}&nbsp;</span>
                                     <span id="info"><a :href="'/a/user/' + comment.user_id">{{ comment.username }}</a></span> • <span id="info">{{ comment.rtime }}</span>
                                 </div>
-                                <div id="content" v-html="comment.content" > </div>
+                                <div id="content" v-html="comment.content" v-highlight> </div>
                             </div>
                         </div>
                     </div>
@@ -58,6 +58,7 @@
 
 <script>
 /* eslint-disable */
+import 'highlight.js'
 import { mavonEditor } from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import URLprefix from '../../config'
@@ -81,30 +82,30 @@ export default {
                 bold: true, // 粗体
                 italic: true, // 斜体
                 header: true, // 标题
-                underline: true, // 下划线
-                strikethrough: true, // 中划线
-                mark: true, // 标记
                 quote: true, // 引用
-                ol: true, // 有序列表
                 ul: true, // 无序列表
                 link: true, // 链接
                 code: true, // code
-                trash: true, // 清空
                 table: true, // 表格
+                trash: true, // 清空
                 fullscreen: true, // 全屏编辑
-                alignleft: true, // 左对齐
-                aligncenter: true, // 居中
-                alignright: true, // 右对齐
+                htmlcode: true, // 展示html源码
                 preview: true, // 预览
                 help: true, // 帮助
-
+                
+                underline: false, // 下划线
+                strikethrough: false, // 中划线
+                mark: false, // 标记
+                ol: false, // 有序列表
+                 alignleft: false, // 左对齐
+                aligncenter: false, // 居中
+                alignright: false, // 右对齐
                 superscript: false, // 上角标
                 subscript: false, // 下角标
                 undo: false, // 上一步
                 redo: false, // 下一步
                 imagelink: false, // 图片链接
                 readmodel: false, // 沉浸式阅读
-                htmlcode: false, // 展示html源码
                 save: false, // 保存（触发events中的save事件）
                 navigation: false, // 导航目录
                 subfield: false, // 单双栏模式
@@ -199,7 +200,6 @@ export default {
               }).then(response => response.json())
               .then(json => {
                   window.location.reload ( true ) 
-                  this.$router.push('/')
               })
               .catch((e) => {
                 console.log(e)
@@ -294,23 +294,38 @@ export default {
         padding: 0.1rem;
         width: 100%;
 }
+#theblog blockquote {
+    padding: 0.8rem;
+    border-left: 5px solid #ccc;
+    background: ghostwhite;
+    width: 100%;
+}
+#theblog ul li, #theblog ol li {
+    padding: 0.8vh 0.3vw;
+    border-left: 2px solid var(--purple);
+}
+#theblog table {
+    padding: 0.3rem;
+    border: 2px solid  #aaa;
+}
+#theblog table td {
+    padding: 0.5rem;
+    border-top: 1px solid  #aaa;
+}
 #theblog pre {
     display: block;
-    padding: 8px;
+    padding: 5px;
     margin: 5px 0;
-    font-size: 13.3px;
     line-height: 1.5;
-    color: var(--purple);
     word-break: break-all;
     word-wrap: break-word;
-    background-color: #f5f5f5;
+    background-color: #fcf4fc;
     border: 1px solid rgb(246, 226, 252);
     text-shadow: none;
 }
 
 #theblog code {
     padding: 2px 4px;
-    font-size: 90%;
     background-color: #f5f5f5;
     border-radius: 4px;
     border: 1px solid #ccc;

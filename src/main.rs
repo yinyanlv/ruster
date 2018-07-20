@@ -20,10 +20,12 @@ extern crate postgres;
 extern crate timeago;
 extern crate pulldown_cmark;
 extern crate ammonia;
-extern crate comrak; 
+extern crate comrak;
+extern crate openssl; 
 
 use actix::*;
 use actix_web::{server, App, http::{header, Method}, fs, middleware, middleware::cors::Cors};
+use openssl::ssl::{SslAcceptor, SslFiletype, SslMethod};
 use diesel::prelude::PgConnection;
 use diesel::r2d2::{ Pool, ConnectionManager };
 
@@ -44,6 +46,12 @@ fn main() {
     ::std::env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
     let sys = actix::System::new("webapp");
+    // load ssl keys
+    // let mut builder = SslAcceptor::mozilla_intermediate(SslMethod::tls()).unwrap();
+    // builder
+    //     .set_private_key_file("key.pem", SslFiletype::PEM)
+    //     .unwrap();
+    // builder.set_certificate_chain_file("cert.pem").unwrap();
 
     let db_url = dotenv::var("DATABASE_URL").expect("DATABASE_URL must be set");
     let manager = ConnectionManager::<PgConnection>::new(db_url);
@@ -83,6 +91,7 @@ fn main() {
             })
             .register())
             .handler("/", fs::StaticFiles::new("public")))
+        // .bind_ssl("127.0.0.1:8080", builder)
         .bind("localhost:8000").unwrap()
         .shutdown_timeout(2)
         .start();
