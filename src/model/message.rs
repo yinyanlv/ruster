@@ -3,6 +3,7 @@ use utils::schema::messages;
 
 #[derive(Clone,Debug,Serialize,Deserialize,PartialEq,Queryable,Identifiable)]
 #[table_name = "messages"]
+#[serde(rename_all = "camelCase")]
 pub struct Message {
     pub id: i32,
     pub theme_id: i32,
@@ -16,6 +17,7 @@ pub struct Message {
 
 #[derive(Serialize,Deserialize,Insertable,Debug, Clone)]
 #[table_name="messages"]
+#[serde(rename_all = "camelCase")]
 pub struct NewMessage<'a> {
     pub theme_id: i32,
     pub from_user_id: i32,

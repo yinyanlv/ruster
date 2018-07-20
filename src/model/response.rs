@@ -15,6 +15,7 @@ pub struct Msgs {
 }
 
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct SigninMsgs {
     pub status: i32,
     pub token: String,
@@ -23,6 +24,7 @@ pub struct SigninMsgs {
 }
 
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct ThemePageListMsgs {
     pub status: i32,
     pub message : String,
@@ -32,12 +34,14 @@ pub struct ThemePageListMsgs {
 }
 
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct UserInfoMsgs {
     pub status: i32,
     pub message : String,
     pub current_user: User,
 }
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct UserIdMsgs {
     pub status: i32,
     pub message : String,
@@ -45,6 +49,7 @@ pub struct UserIdMsgs {
 }
 
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct ThemeAndCommentsMsgs {
     pub theme: Theme,
     pub theme_user: User,
@@ -80,6 +85,7 @@ pub struct UserSavesMsgs {
     pub saves : Vec<Theme>,
 }
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct UserMessagesMsgs {
     pub status: u8,
     pub message : String,
@@ -95,6 +101,7 @@ pub struct BlogLikeMsgs {
     pub saveorno : bool,
 }
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct BestPersonMsgs {
     pub status: i32,
     pub message : String,

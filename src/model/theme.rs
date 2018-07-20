@@ -6,6 +6,7 @@ use model::response::{ThemePageListMsgs, ThemeAndCommentsMsgs, BlogLikeMsgs,Msgs
 
 #[derive(Clone,Debug,Serialize,Deserialize,PartialEq,Queryable,QueryableByName)]
 #[table_name = "themes"]
+#[serde(rename_all = "camelCase")]
 pub struct Theme {
     pub id: i32,
     pub user_id: i32,
@@ -20,6 +21,7 @@ pub struct Theme {
 
 #[derive(Serialize,Deserialize,Insertable,Debug, Clone)]
 #[table_name="themes"]
+#[serde(rename_all = "camelCase")]
 pub struct NewTheme<'a> {
     pub user_id: i32,
     pub category_id: i32,
@@ -29,6 +31,7 @@ pub struct NewTheme<'a> {
 }
 
 #[derive(Clone,Debug,Serialize,Deserialize,PartialEq,Queryable)]
+#[serde(rename_all = "camelCase")]
 pub struct Comment {
     pub id: i32,
     pub theme_id: i32,
@@ -39,6 +42,7 @@ pub struct Comment {
 
 #[derive(Serialize,Deserialize,Insertable,Debug, Clone)]
 #[table_name="comments"]
+#[serde(rename_all = "camelCase")]
 pub struct NewComment<'a> {
     pub theme_id: i32,
     pub user_id: i32,
@@ -46,6 +50,7 @@ pub struct NewComment<'a> {
     pub created_at: NaiveDateTime,
 }
 #[derive(Clone,Debug,Serialize,Deserialize,PartialEq,Queryable)]
+#[serde(rename_all = "camelCase")]
 pub struct Save {
     pub id: i32,
     pub theme_id: i32,
@@ -54,6 +59,7 @@ pub struct Save {
 }
 #[derive(Serialize,Deserialize,Insertable,Debug, Clone)]
 #[table_name="saves"]
+#[serde(rename_all = "camelCase")]
 pub struct NewSave {
     pub theme_id: i32,
     pub user_id: i32,
@@ -61,6 +67,7 @@ pub struct NewSave {
 }
 
 #[derive(Deserialize,Serialize, Debug,Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct ThemeNew {
     pub user_id: i32,
     pub category_name: String,
@@ -69,11 +76,13 @@ pub struct ThemeNew {
 }
 
 #[derive(Deserialize,Serialize, Debug,Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct ThemeId {
     pub theme_id: i32,
 }
 
 #[derive(Deserialize,Serialize, Debug,Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct ThemeComment {
     pub theme_id: i32,
     pub theme_user_id: i32,
@@ -82,21 +91,25 @@ pub struct ThemeComment {
 }
 
 #[derive(Deserialize,Serialize, Debug,Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct ThemePageList {
     pub page_id : i32,
 }
 #[derive(Deserialize,Serialize, Debug,Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct BlogSave {
     pub user_id : i32,
     pub theme_id : i32,
 }
 #[derive(Deserialize,Serialize, Debug,Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct BlogLike {
     pub theme_id : i32,
     pub user_id : i32,
 }
 
 #[derive(Deserialize,Serialize, Debug,Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct ThemeListResult {
     pub id: i32,
     pub user_id: i32,
@@ -114,6 +127,7 @@ pub struct ThemeListResult {
 }
 
 #[derive(Deserialize,Serialize, Debug,Clone)]
+#[serde(rename_all = "camelCase")]
 pub struct CommentReturn {
     pub id: i32,
     pub theme_id: i32,

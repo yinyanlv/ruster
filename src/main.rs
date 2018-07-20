@@ -40,7 +40,7 @@ use api::category::{categorys, category_new, category_theme_page_list};
 use api::user::{user_info, user_delete, user_id,user_update,user_themes,user_comments,user_saves,user_messages,user_messages_readall};
 
 fn main() {
-    ::std::env::set_var("RUST_LOG", "actix-cn=info");
+    ::std::env::set_var("RUST_LOG", "ruster=info");
     ::std::env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
     let sys = actix::System::new("webapp");
@@ -54,9 +54,11 @@ fn main() {
             .resource("/", |r| r.h(home))
             .resource("/a/{tail:.*}", |r| r.h(path))
             .configure(|app| Cors::for_app(app)
+            .allowed_origin("http://localhost:8080")
             .allowed_methods(vec!["GET", "POST"])
             .allowed_headers(vec![header::AUTHORIZATION, header::ACCEPT])
             .allowed_header(header::CONTENT_TYPE)
+            .supports_credentials()
             .max_age(3600)
             .resource("/user/signup", |r| { r.method(Method::POST).with(signup); })
             .resource("/user/signin", |r| { r.method(Method::POST).with(signin); })

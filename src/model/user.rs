@@ -6,6 +6,7 @@ use model::response::{Msgs,MyError, SigninMsgs,UserIdMsgs, UserInfoMsgs,
                         UserThemesMsgs,UserCommentsMsgs,UserSavesMsgs,UserMessagesMsgs};
 
 #[derive(Debug,Serialize,Deserialize,PartialEq,Identifiable,Queryable)]
+#[serde(rename_all = "camelCase")]
 pub struct User {
     pub id: i32,
     pub email: String,
@@ -16,6 +17,7 @@ pub struct User {
 
 #[derive(Debug,Serialize,Deserialize,Insertable)]
 #[table_name="users"]
+#[serde(rename_all = "camelCase")]
 pub struct NewUser<'a> {
     pub email: &'a str,
     pub username: &'a str,
@@ -24,6 +26,7 @@ pub struct NewUser<'a> {
 }
 
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct SignupUser {
     pub username: String,
     pub email: String,
@@ -37,15 +40,18 @@ pub struct SigninUser {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct UserInfo {
     pub user_id: String,
 }
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct UserId {
     pub user_id: i32,
 }
 
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct UserUpdate {
     pub user_id: i32,
     pub newname: String,
@@ -55,26 +61,32 @@ pub struct UserUpdate {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct UserDelete {
     pub user_id: String,
 }
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct UserThemes {
     pub user_id: i32,
 }
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct UserComments {
     pub user_id: i32,
 }
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct UserSaves {
     pub user_id: i32,
 }
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct UserMessages {
     pub user_id: i32,
 }
 #[derive(Deserialize,Serialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct UserMessagesReadall{
     pub user_id: i32,
     pub messages_unread_ids: Vec<i32>,
