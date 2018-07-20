@@ -40,7 +40,7 @@ use api::category::{categorys, category_new, category_theme_page_list};
 use api::user::{user_info, user_delete, user_id,user_update,user_themes,user_comments,user_saves,user_messages,user_messages_readall};
 
 fn main() {
-    ::std::env::set_var("RUST_LOG", "actix_web=info");
+    ::std::env::set_var("RUST_LOG", "ruster=info");
     ::std::env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
     let sys = actix::System::new("webapp");
