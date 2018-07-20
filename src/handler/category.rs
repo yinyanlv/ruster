@@ -104,6 +104,7 @@ impl Handler<CategoryThemePageList> for ConnDsl {
                 message : "theme_list result.".to_string(),
                 theme_list: category_themes_list,
                 theme_page_count: theme_page_count,
+                theme_page_number: theme_category_count,
                 categorys: category_list,
             }) 
         }else if category_theme_page_list.category_name == "best" {
@@ -123,11 +124,11 @@ impl Handler<CategoryThemePageList> for ConnDsl {
                 theme_ids_page_one.dedup();
                 if theme_ids_page_one.len() >= 33 {
                         let mut page_one_id_result:Vec<i32> = vec![];
-                        let mut page_one_ids_33:Vec<i32> = vec![];
+                        let mut page_one_ids_one:Vec<i32> = vec![];
                         for (index,item) in theme_ids_page_one.iter().enumerate().filter(|&(idx, _)| idx < 33) {
-                            page_one_ids_33.push(*item);
+                            page_one_ids_one.push(*item);
                         }
-                        for page_one_id in page_one_ids_33.iter() {
+                        for page_one_id in page_one_ids_one.iter() {
                             for index in theme_ids2.iter() {
                                     if *page_one_id == *index{
                                         page_one_id_result.push(*index)
@@ -177,6 +178,7 @@ impl Handler<CategoryThemePageList> for ConnDsl {
                                 message : "theme_list result.".to_string(),
                                 theme_list: category_themes_list,
                                 theme_page_count: theme_page_count,
+                                theme_page_number: theme_category_count,
                                 categorys: category_list,
                         })   
                 }else{
@@ -231,6 +233,7 @@ impl Handler<CategoryThemePageList> for ConnDsl {
                                 message : "theme_list result.".to_string(),
                                 theme_list: category_themes_list,
                                 theme_page_count: theme_page_count,
+                                theme_page_number: theme_category_count,
                                 categorys: category_list,
                         })
 
@@ -360,6 +363,7 @@ impl Handler<CategoryThemePageList> for ConnDsl {
                         message : "theme_list result.".to_string(),
                         theme_list: category_themes_list,
                         theme_page_count: theme_page_count,
+                        theme_page_number: theme_category_count,
                         categorys: category_list,
                 })  
             }   
@@ -413,6 +417,7 @@ impl Handler<CategoryThemePageList> for ConnDsl {
                 message : "theme_list result.".to_string(),
                 theme_list: category_themes_list,
                 theme_page_count: theme_page_count,
+                theme_page_number: theme_category_count,
                 categorys: category_list,
             }) 
         }
