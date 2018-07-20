@@ -85,6 +85,7 @@ impl Handler<ThemePageList> for ConnDsl {
                 message : "theme_list result.".to_string(),
                 theme_list: themes_list,
                 theme_page_count: theme_page_count,
+                theme_page_number: theme_count,
                 categorys: category_list,
             })
     }

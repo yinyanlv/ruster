@@ -30,6 +30,7 @@ pub struct ThemePageListMsgs {
     pub message : String,
     pub theme_list: Vec<ThemeListResult>,
     pub theme_page_count: i32,
+    pub theme_page_number: i32,
     pub categorys: Vec<Category>,
 }
 
