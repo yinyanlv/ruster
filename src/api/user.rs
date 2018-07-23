@@ -3,7 +3,7 @@ use futures::future::Future;
 use utils::token::verify_token;
 
 use model::user::{UserInfo,UserId, UserDelete, UserUpdate, UserThemes,UserComments,UserSaves,UserMessages,UserMessagesReadall};
-use api::index::AppState;
+use router::AppState;
 
 
 pub fn user_info(req: HttpRequest<AppState>) -> FutureResponse<HttpResponse> {

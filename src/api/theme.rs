@@ -1,7 +1,7 @@
 use actix_web::{HttpMessage, HttpRequest, HttpResponse, State, Json, AsyncResponder, FutureResponse};
 use futures::future::Future;
 
-use api::index::AppState;
+use router::AppState;
 use model::theme::{ThemePageList,ThemeNew, ThemeId, ThemeComment,BlogSave,BlogLike,BestPerson};
 
 pub fn theme_page_list((theme_page_list, state): (Json<ThemePageList>, State<AppState>)) -> FutureResponse<HttpResponse> {

@@ -1,8 +1,6 @@
-use diesel;
-use diesel::*;
+use diesel::{self,sql_query,RunQueryDsl,QueryDsl,ExpressionMethods};
 use diesel::sql_types::Integer;
-use actix::*;
-use actix_web::*;
+use actix_web::{actix::Handler, error,Error};
 use timeago;
 use regex::{Regex, Captures};
 use chrono::{Utc, Datelike, Timelike, NaiveDateTime};
@@ -11,7 +9,7 @@ use model::theme::{Theme,ThemePageList, ThemeListResult, ThemeId, NewTheme, Best
            ThemeNew, Comment, CommentReturn, NewComment, ThemeComment,BlogSave, Save,NewSave,BlogLike};
 use model::category::Category;
 use model::message::{Message, NewMessage};
-use model::db::ConnDsl;
+use router::ConnDsl;
 use model::user::User;
 use utils::{time, markdown2html,markdown_render, order_vec, state::PAGE_SIZE};
 

@@ -1,7 +1,5 @@
-use actix::*;
-use actix_web::*;
+use actix_web::{Error,actix::Message};
 use utils::schema::categorys;
-use model::db::ConnDsl;
 use chrono::{Utc, NaiveDateTime};
 use model::response::{CategorysMsgs, Msgs, ThemePageListMsgs};
 

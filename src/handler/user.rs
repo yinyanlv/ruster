@@ -1,7 +1,5 @@
-use diesel;
-use diesel::prelude::*;
-use actix::*;
-use actix_web::*;
+use diesel::{self,QueryDsl,ExpressionMethods,RunQueryDsl};
+use actix_web::{actix::Handler,error,Error};
 use chrono::Utc;
 use bcrypt::{DEFAULT_COST, hash, verify};
 use utils::token;
@@ -9,7 +7,7 @@ use utils::token;
 use model::user::{User, NewUser, SignupUser, SigninUser, UserInfo, UserUpdate, UserId,
                   UserDelete, UserThemes,UserComments,UserSaves,UserMessages,UserMessagesReadall};
 use model::response::{Msgs, SigninMsgs, UserIdMsgs,UserInfoMsgs, UserThemesMsgs,UserCommentsMsgs, UserSavesMsgs, UserMessagesMsgs};
-use model::db::ConnDsl;
+use router::ConnDsl;
 use model::message::Message;
 use model::theme::{Theme, Comment,Save};
 use model::response::MyError;

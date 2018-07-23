@@ -1,7 +1,7 @@
 use actix_web::{HttpMessage, HttpRequest, HttpResponse, State, Json, AsyncResponder, FutureResponse};
 use futures::future::Future;
 
-use api::index::AppState;
+use router::AppState;
 use model::category::{Categorys, CategoryNew, CategoryThemePageList};
 
 pub fn category_new((category_new, state): (Json<CategoryNew>, State<AppState>)) -> FutureResponse<HttpResponse> {
